@@ -10,3 +10,19 @@
     display: flex;
     gap: 5px;
 }
+#post-list .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+#post-list .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
+}
+
+#post-list .card:hover .card-body {
+    background-color: rgba(0, 123, 255, 0.1);
+}
