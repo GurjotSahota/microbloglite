@@ -1,6 +1,6 @@
 /* Posts Page CSS */
 .card-body {
-    position: relative; /* Make the card body a positioned container */
+    position: relative; 
 }
 
 .card-body .btn-group {
