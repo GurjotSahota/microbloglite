@@ -25,8 +25,8 @@ loginForm.onsubmit = function (event) {
         if (!result) {
             // If login fails, notify the user and reset the form
             alert("Invalid username or password. Please try again.");
-            loginForm.loginButton.disabled = false; // Re-enable the button
-            loginForm.reset(); // Clear the input fields
+            loginForm.loginButton.disabled = false; 
+            loginForm.reset(); 
         }
     });
 }

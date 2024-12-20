@@ -36,7 +36,7 @@ function renderPosts() {
   const loginData = getLoginData();
   const showOwnPosts = filterToggle.checked;
 
-  postList.innerHTML = ""; // Clear existing posts
+  postList.innerHTML = ""; 
 
   allPosts
     .filter((post) => !showOwnPosts || post.username === loginData.username)
@@ -65,7 +65,7 @@ function renderPosts() {
       const buttonGroup = document.createElement("div");
       buttonGroup.classList.add("btn-group");
 
-      // Add Edit and Delete Buttons
+      // Edit and Delete buttons dynamically added
       if (post.username === loginData.username) {
           const editPost = document.createElement("button");
           editPost.innerText = "Edit";
