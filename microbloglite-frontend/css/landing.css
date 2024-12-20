@@ -1,0 +1,13 @@
+/* Landing Page CSS */
+body {
+    background-color: #f8f9fa; 
+}
+
+.card {
+    border-radius: 10px;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}

@@ -2,7 +2,7 @@
 
 "use strict";
 
-const apiBaseURL = "http://localhost:5005";
+const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 // Online server:   "http://microbloglite.us-east-2.elasticbeanstalk.com"
 
 // NOTE: API documentation is available at /docs 
@@ -91,6 +91,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page (index.html)
+            window.location.assign("index.html");  // redirect back to landing page (index.html)
         });
 }

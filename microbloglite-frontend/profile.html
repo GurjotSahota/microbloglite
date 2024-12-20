@@ -16,26 +16,26 @@
     <link rel="stylesheet" href="css/global.css">
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="css/posts.css">
+    <link rel="stylesheet" href="css/profile.css">
 
-    <title>Posts</title>
+    <title>User Profile</title>
 
     <!-- Run BEFORE page is finished loading -->
     <script src="scripts/auth.js"></script>
     <script>
         // Redirect to login if the user is not logged in
-        if (isLoggedIn() === false) window.location.replace("index.html");
+        if (isLoggedIn() === false) window.location.replace("/");
     </script>
 </head>
 <body>
 
 <header class="bg-primary text-white py-3">
     <div class="container d-flex justify-content-between align-items-center">
-        <h1 class="m-0">Posts Network</h1>
+        <h1 class="m-0">Profile</h1>
         <nav>
             <ul class="nav">
                 <li class="nav-item">
-                    <a href="profile.html" class="nav-link text-white">Profile</a>
+                    <a href="posts.html" class="nav-link text-white">Posts</a>
                 </li>
                 <li class="nav-item">
                     <button id="logout-button" class="btn btn-danger">Logout</button>
@@ -45,30 +45,27 @@
     </div>
 </header>
 
-<main class="min-vh-100 mt-5">
-    <section id="create-post" class="mb-5">
-        <h2 class="text-center text-primary">Create a New Post</h2>
-        <div class="card shadow p-4">
-            <form id="new-post-form">
-                <div class="mb-3">
-                    <textarea id="post-content" class="form-control" rows="3" placeholder="What's on your mind?" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Post</button>
-            </form>
-        </div>
+<main class="container mt-5">
+    <section id="user-info" class="mb-4">
+        <h3>Your Information</h3>
+        <p><strong>Full Name:</strong> <span id="full-name-display"></span></p>
+        <p><strong>Username:</strong> <span id="username-display"></span></p>
+        <p><strong>Password:</strong> <span id="password-display">******</span></p>
     </section>
 
-    <section id="posts-section">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="text-primary">Posts</h2>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="filter-toggle">
-                <label class="form-check-label" for="filter-toggle">Show only my posts</label>
+    <section id="edit-info" class="mb-5">
+        <h3>Edit Your Information</h3>
+        <form id="edit-info-form">
+            <div class="mb-3">
+                <label for="new-full-name" class="form-label">Full Name</label>
+                <input type="text" id="new-full-name" class="form-control" placeholder="Enter your new full name">
             </div>
-        </div>
-
-        <div id="post-list" class="mt-3">
-        </div>
+            <div class="mb-3">
+                <label for="new-password" class="form-label">New Password</label>
+                <input type="password" id="new-password" class="form-control" placeholder="Enter your new password">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
     </section>
 </main>
 
@@ -76,7 +73,7 @@
     <p>&copy; 2024 Microblog Network | All rights reserved</p>
 </footer>
 
-<!-- Page-specific JS -->
-<script src="scripts/posts.js"></script>
+<!-- Page-specific code -->
+<script src="scripts/profile.js"></script>
 </body>
 </html>

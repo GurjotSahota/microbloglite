@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="css/global.css">
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/register.css">
 
-    <title>Login to Microblog Network</title>
+    <title>Register for Microblog Network</title>
 
     <!-- Run BEFORE page is finished loading -->
     <script src="scripts/auth.js"></script>
@@ -30,30 +30,40 @@
 <body>
 
 <header class="bg-primary text-white py-3">
-    <div class="container d-flex justify-content-center align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
         <h1 class="m-0">Microblog Network</h1>
     </div>
 </header>
 
 <main class=" min-vh-100 d-flex justify-content-center align-items-center" style="height: 80vh;">
     <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
-        <h2 class="text-center mb-4 text-primary">Welcome Back!</h2>
-        <form id="login">
+        <h2 class="text-center mb-4 text-primary">Create Your Account</h2>
+        <form id="register-form">
+            <div class="mb-3">
+                <label for="full-name" class="form-label">Full Name</label>
+                <input type="text" id="full-name" class="form-control" required>
+            </div>
+
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" id="username" class="form-control" minlength="3" placeholder="Enter your username" required>
+                <input type="text" id="username" class="form-control" minlength="3" required>
             </div>
 
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" class="form-control" minlength="6" placeholder="Enter your password" required>
+                <input type="password" id="password" class="form-control" minlength="6" required>
             </div>
 
-            <button id="loginButton" type="submit" class="btn btn-primary w-100">Login</button>
+            <div class="mb-3">
+                <label for="confirm-password" class="form-label">Confirm Password</label>
+                <input type="password" id="confirm-password" class="form-control" minlength="6" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>
 
         <div class="text-center mt-3">
-            <p>New user? <a href="register.html" class="text-primary">Register Here</a></p>
+            <p>Already have an account? <a href="index.html" class="text-primary">Login Here</a></p>
         </div>
     </div>
 </main>
@@ -63,6 +73,7 @@
 </footer>
 
 <!-- Page-specific JS -->
-<script src="scripts/landing.js"></script>
+<script src="scripts/register.js"></script>
 </body>
 </html>
+
