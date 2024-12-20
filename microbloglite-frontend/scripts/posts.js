@@ -69,14 +69,14 @@ function renderPosts() {
 if (post.username === loginData.username) {
     const editPost = document.createElement("button");
     editPost.innerText = "Edit";
-    editPost.className = "btn btn-dark me-2 rounded-5";
+    editPost.className = "btn btn-primary me-2 rounded-5";
     editPost.addEventListener("click", () => {
         location.href = `editPost.html?_id=${post._id}`;
     });
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
-    deleteButton.className = "btn btn-dark rounded-5";
+    deleteButton.className = "btn btn-danger text-white rounded-5";
     deleteButton.addEventListener("click", async () => {
         if (post._id) {
             try {
