@@ -20,5 +20,13 @@ loginForm.onsubmit = function (event) {
     loginForm.loginButton.disabled = true;
 
     // Time to actually process the login using the function from auth.js!
-    login(loginData);
-};
+    login(loginData)
+    .then(result => {
+        if (!result) {
+            // If login fails, notify the user and reset the form
+            alert("Invalid username or password. Please try again.");
+            loginForm.loginButton.disabled = false; // Re-enable the button
+            loginForm.reset(); // Clear the input fields
+        }
+    });
+}
