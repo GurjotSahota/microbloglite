@@ -7,7 +7,7 @@ Practice and experimentation provide experience, and experience provides confide
 <mark>Note:</mark> Run this front-end locally via **VS Code's Live Server extension** or you may encounter CORS errors in the browser.
 
 
-Microblog Network
+# Microblog Network
 
 Welcome to Microblog Network – the perfect platform to share your thoughts, connect with others, and explore engaging content. Whether you want to post updates, interact with other users, or personalize your profile, Microblog Network has you covered!
 
