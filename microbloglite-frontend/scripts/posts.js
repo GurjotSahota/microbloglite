@@ -65,17 +65,56 @@ function renderPosts() {
             timestamp.classList.add("text-muted");
             timestamp.textContent = new Date(post.createdAt).toLocaleString();
             postTime.appendChild(timestamp);
+// Add Edit and Delete Buttons
+if (post.username === loginData.username) {
+    const editPost = document.createElement("button");
+    editPost.innerText = "Edit";
+    editPost.className = "btn btn-dark me-2 rounded-5";
+    editPost.addEventListener("click", () => {
+        location.href = `editPost.html?_id=${post._id}`;
+    });
 
-           // Append elements to card body
-           cardBody.appendChild(postTitle);
-           cardBody.appendChild(postText);
-           cardBody.appendChild(postTime);
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "Delete";
+    deleteButton.className = "btn btn-dark rounded-5";
+    deleteButton.addEventListener("click", async () => {
+        if (post._id) {
+            try {
+                const options = {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${loginData.token}`,
+                    },
+                };
 
-            postElement.appendChild(cardBody);
+                const response = await fetch(`${apiBaseURL}/api/posts/${post._id}`, options);
+                if (response.ok) {
+                    alert("Post deleted successfully!");
+                    loadPosts(); // Reload posts after deletion
+                } else {
+                    const errorData = await response.json();
+                    console.error("Error deleting post:", errorData);
+                    alert("Unable to delete post. Please try again later.");
+                }
+            } catch (error) {
+                console.error("Error deleting post:", error);
+                alert("An error occurred. Please try again later.");
+            }
+        }
+    });
 
-            
-            postList.appendChild(postElement);
-        });
+    cardBody.appendChild(editPost);
+    cardBody.appendChild(deleteButton);
+}
+
+cardBody.appendChild(postTitle);
+cardBody.appendChild(postText);
+cardBody.appendChild(postTime);
+
+postElement.appendChild(cardBody);
+postList.appendChild(postElement);
+});
 }
 
 // New submission
