@@ -6,6 +6,31 @@ body {
 .card {
     border: none;
     border-radius: 10px;
+    position: relative; 
+}
+
+.card-body .btn-group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+#post-history-list .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+#post-history-list .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
+}
+
+#post-history-list .card:hover .card-body {
+    background-color: rgba(0, 123, 255, 0.1);
 }
 
 .profile-picture {
@@ -26,14 +51,8 @@ hr {
     margin: 1.5rem 0;
     border-top: 1px solid #ddd;
 }
+
 .card-body {
     position: relative;
 }
 
-.card-body .btn-group {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 5px;
-}
