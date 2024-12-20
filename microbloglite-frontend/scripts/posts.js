@@ -66,12 +66,11 @@ function renderPosts() {
             timestamp.textContent = new Date(post.createdAt).toLocaleString();
             postTime.appendChild(timestamp);
 
-            
-            cardBody.appendChild(postTitle);
-            cardBody.appendChild(postText);
-            cardBody.appendChild(postTime);
+           // Append elements to card body
+           cardBody.appendChild(postTitle);
+           cardBody.appendChild(postText);
+           cardBody.appendChild(postTime);
 
-            
             postElement.appendChild(cardBody);
 
             
