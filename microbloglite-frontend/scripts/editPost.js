@@ -35,37 +35,5 @@ function loadPostContent() {
             window.location.replace("posts.html");
         });
 }
-// there is no current PUT method or request for post
-/* editPostForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const loginData = getLoginData();
-    const updatedContent = postContentTextarea.value;
-
-    const options = {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${loginData.token}`,
-        },
-        body: JSON.stringify({ text: updatedContent }),
-    };
-
-    fetch(`${apiBaseURL}/api/posts/${postId}`, options)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to update post.");
-            }
-            return response.json();
-        })
-        .then(updatedPost => {
-            alert("Post updated successfully!");
-            window.location.replace("posts.html");
-        })
-        .catch(error => {
-            console.error("Error updating post:", error);
-            alert("Unable to update post. Please try again later.");
-        });
-}); */
 
 loadPostContent();
