@@ -4,8 +4,9 @@ const postList = document.getElementById("post-list");
 const newPostForm = document.getElementById("new-post-form");
 const logoutButton = document.getElementById("logout-button");
 const filterToggle = document.getElementById("filter-toggle");
+document.getElementById("current-user").textContent = getLoginData().username;
 
-let allPosts = []; // Store all posts globally
+let allPosts = []; 
 
 // Fetch and display posts
 function loadPosts() {

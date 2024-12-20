@@ -35,8 +35,8 @@ function loadPostContent() {
             window.location.replace("posts.html");
         });
 }
-
-editPostForm.addEventListener("submit", function (event) {
+// there is no current PUT method or request for post
+/* editPostForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const loginData = getLoginData();
@@ -66,6 +66,6 @@ editPostForm.addEventListener("submit", function (event) {
             console.error("Error updating post:", error);
             alert("Unable to update post. Please try again later.");
         });
-});
+}); */
 
 loadPostContent();

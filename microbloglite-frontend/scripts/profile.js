@@ -5,7 +5,6 @@ const usernameDisplay = document.getElementById("username-display");
 
 const editInfoForm = document.getElementById("edit-info-form");
 
-// Fetch and display user information
 function loadUserInfo() {
     const loginData = getLoginData();
 
@@ -33,7 +32,7 @@ function loadUserInfo() {
         });
 }
 
-// Update user information
+// Update the user info and refresh
 editInfoForm.onsubmit = function (event) {
     event.preventDefault();
 
@@ -64,7 +63,7 @@ editInfoForm.onsubmit = function (event) {
         })
         .then(data => {
             alert("Your information has been updated!");
-            loadUserInfo(); // Refresh user information
+            loadUserInfo(); 
         })
         .catch(error => {
             console.error("Error updating user info:", error);
@@ -72,10 +71,9 @@ editInfoForm.onsubmit = function (event) {
         });
 };
 
-// Load user information on page load
 loadUserInfo();
 
-// Logout button
+
 document.getElementById("logout-button").addEventListener("click", function () {
     logout();
 });
